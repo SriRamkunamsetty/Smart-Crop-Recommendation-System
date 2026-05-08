@@ -1,6 +1,7 @@
 import React from 'react';
 import Markdown from 'react-markdown';
 import { Download } from 'lucide-react';
+import { useLanguage } from '../lib/LanguageContext';
 
 const REPORT_MARKDOWN = `
 # Smart Crop Recommendation System for Indian Farmers
@@ -67,6 +68,8 @@ The Smart Crop Recommendation System successfully illustrates how machine learni
 `;
 
 export default function Documentation() {
+  const { t } = useLanguage();
+
   const handleDownload = () => {
     const blob = new Blob([REPORT_MARKDOWN], { type: 'text/markdown' });
     const url = URL.createObjectURL(blob);
@@ -83,15 +86,15 @@ export default function Documentation() {
     <div className="max-w-4xl mx-auto py-10 px-4">
       <div className="flex justify-between items-end mb-8 border-b border-gray-200 pb-4">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Project Documentation</h2>
-          <p className="text-gray-500 mt-2">Formal project report and methodology details.</p>
+          <h2 className="text-3xl font-bold text-gray-900">{t('doc.title') || 'Project Documentation'}</h2>
+          <p className="text-gray-500 mt-2">{t('doc.subtitle') || 'Formal project report and methodology details.'}</p>
         </div>
         <button 
           onClick={handleDownload}
           className="flex items-center space-x-2 bg-emerald-100 text-emerald-700 hover:bg-emerald-200 px-4 py-2 rounded-lg font-medium transition-colors"
         >
           <Download className="h-4 w-4" />
-          <span>Download PDF/MD</span>
+          <span>{t('doc.download') || 'Download PDF/MD'}</span>
         </button>
       </div>
 

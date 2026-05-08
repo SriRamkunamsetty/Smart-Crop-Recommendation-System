@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Upload, Cpu, Save, CheckCircle, BarChart, Database, AlertCircle } from 'lucide-react';
 
+import { useLanguage } from '../lib/LanguageContext';
+
 export default function Train() {
+  const { t } = useLanguage();
   const [file, setFile] = useState<File | null>(null);
   const [algorithms, setAlgorithms] = useState({
     logistic: true,
@@ -56,9 +59,9 @@ export default function Train() {
       <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold text-gray-900 flex items-center justify-center gap-3">
           <Cpu className="h-8 w-8 text-emerald-600" />
-          Model Training Studio
+          {t('train.title')}
         </h2>
-        <p className="text-gray-500 mt-2">Upload datasets and train custom ML models for crop recommendation.</p>
+        <p className="text-gray-500 mt-2">{t('train.subtitle')}</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
@@ -68,7 +71,7 @@ export default function Train() {
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
               <Database className="h-5 w-5 text-emerald-600" />
-              1. Dataset
+              {t('train.data')}
             </h3>
             
             <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:bg-gray-50 transition-colors relative">
@@ -78,8 +81,8 @@ export default function Train() {
                 <p className="text-sm font-semibold text-emerald-600">{file.name}</p>
               ) : (
                 <>
-                  <p className="text-sm text-gray-600 font-medium">Click to upload CSV</p>
-                  <p className="text-xs text-gray-400 mt-1">Format: N, P, K, Temp...</p>
+                  <p className="text-sm text-gray-600 font-medium">{t('train.click')}</p>
+                  <p className="text-xs text-gray-400 mt-1">{t('train.format')}</p>
                 </>
               )}
             </div>
@@ -88,7 +91,7 @@ export default function Train() {
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
               <BarChart className="h-5 w-5 text-emerald-600" />
-              2. Algorithms
+              {t('train.algo')}
             </h3>
             
             <div className="space-y-3">
@@ -112,7 +115,7 @@ export default function Train() {
             className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-gray-300 text-white font-bold py-3 px-4 rounded-xl shadow-md transition-colors flex items-center justify-center gap-2"
           >
             <Cpu className="h-5 w-5" />
-            {trainingState === 'idle' || trainingState === 'completed' ? 'Start Training' : 'Processing...'}
+            {trainingState === 'idle' || trainingState === 'completed' ? t('train.start') : t('train.processing')}
           </button>
         </div>
 
@@ -121,7 +124,7 @@ export default function Train() {
           {trainingState === 'idle' ? (
             <div className="bg-gray-50 h-full rounded-2xl flex flex-col items-center justify-center border-2 border-dashed border-gray-200 p-8 text-center min-h-[400px]">
               <Cpu className="h-16 w-16 text-gray-300 mb-4" />
-              <p className="text-gray-500 font-medium">Configure settings and start training to see progress here.</p>
+              <p className="text-gray-500 font-medium">{t('train.configure')}</p>
             </div>
           ) : (
             <motion.div 
@@ -129,13 +132,13 @@ export default function Train() {
               animate={{ opacity: 1, y: 0 }}
               className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 h-full"
             >
-              <h3 className="text-xl font-bold mb-6 text-gray-800">Training Pipeline</h3>
+              <h3 className="text-xl font-bold mb-6 text-gray-800">{t('train.pipeline')}</h3>
               
               {/* Progress Bar */}
               <div className="mb-8">
                 <div className="flex justify-between text-sm font-medium mb-2">
                   <span className={trainingState === 'uploading' ? 'text-blue-600' : 'text-gray-500'}>
-                    {trainingState === 'uploading' ? 'Preprocessing Data...' : 'Model Training...'}
+                    {trainingState === 'uploading' ? t('train.pre') : t('train.train')}
                   </span>
                   <span className="text-emerald-600">{progress}%</span>
                 </div>

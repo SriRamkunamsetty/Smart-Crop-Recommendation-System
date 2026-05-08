@@ -1,4 +1,4 @@
-import fs from 'fs';
+const fs = require('fs');
 let code = fs.readFileSync('src/pages/Predict.tsx', 'utf8');
 
 // Replacements for UI text
