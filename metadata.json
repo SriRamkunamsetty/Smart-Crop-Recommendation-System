@@ -1,0 +1,6 @@
+{
+  "name": "Smart Crop Recommendation System",
+  "description": "An AI-powered agricultural tool for Indian farmers recommending the best crops based on soil and weather data.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
