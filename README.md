@@ -49,14 +49,22 @@ The application follows a modern client-side architecture focusing on speed and 
 - **Educational Value:** Helps farmers understand the delicate relationship between specific nutrient bounds and crop performance.
 
 ## 💻 Tech Stack
-- **Frontend Framework:** React 18 with Vite
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Icons:** Lucide React
-- **Animations:** Motion
-- **Data Visualization:** Recharts
-- **Markdown Rendering:** React Markdown
-- **Routing:** React Router DOM
+
+### Frontend & UI
+- **Framework:** React 18 with Vite (for fast, optimized builds)
+- **Language:** TypeScript (for type safety and robust code)
+- **Styling:** Tailwind CSS (for modern, responsive, utility-first styling)
+- **Icons:** Lucide React (clean, consistent scalable vector icons)
+- **Animations:** Motion (for smooth, interactive layout animations)
+
+### Data Visualization & Routing
+- **Charting:** Recharts (for dynamic historical and predictive data visualization)
+- **Routing:** React Router DOM (for seamless Single Page Application navigation)
+- **Markdown:** React Markdown (for rendering text-rich educational content)
+
+### Architecture & ML Simulation
+- **State Management:** React Context API (custom `LanguageContext` for i18n support)
+- **Machine Learning:** Custom K-Nearest Centroid classifier implemented in pure TypeScript for client-side, zero-latency inference.
 
 ## 📜 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

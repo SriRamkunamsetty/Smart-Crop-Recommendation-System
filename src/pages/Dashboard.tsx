@@ -59,7 +59,7 @@ export default function Dashboard() {
       <div className="grid lg:grid-cols-2 gap-8 mb-8">
         
         {/* Model Accuracy Chart */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div className="glass-card p-6">
           <h3 className="text-lg font-bold mb-6 text-gray-800">{t('dash.modelPerf')}</h3>
           <div className="h-80 w-full">
             <ResponsiveContainer width="100%" height="100%">
@@ -81,7 +81,7 @@ export default function Dashboard() {
         </div>
 
         {/* NPK Radar Chart */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div className="glass-card p-6">
           <h3 className="text-lg font-bold mb-6 text-gray-800">{t('dash.nutritional')}</h3>
           <div className="h-80 w-full">
             <ResponsiveContainer width="100%" height="100%">
@@ -100,7 +100,7 @@ export default function Dashboard() {
       </div>
 
       {/* Historical Yield Chart */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+      <div className="glass-card p-6">
         <h3 className="text-lg font-bold mb-6 text-gray-800">{t('dash.yield')}</h3>
         <div className="h-96 w-full">
           <ResponsiveContainer width="100%" height="100%">
@@ -127,7 +127,7 @@ export default function Dashboard() {
       {/* Environmental Charts */}
       <div className="grid lg:grid-cols-2 gap-8 mb-8 mt-8">
         {/* Humidity Chart */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div className="glass-card p-6">
           <h3 className="text-lg font-bold mb-6 text-gray-800">{t('dash.humidity')}</h3>
           <div className="h-80 w-full">
             <ResponsiveContainer width="100%" height="100%">
@@ -149,7 +149,7 @@ export default function Dashboard() {
         </div>
 
         {/* Rainfall Chart */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div className="glass-card p-6">
           <h3 className="text-lg font-bold mb-6 text-gray-800">{t('dash.rainfall')}</h3>
           <div className="h-80 w-full">
             <ResponsiveContainer width="100%" height="100%">
@@ -172,7 +172,7 @@ export default function Dashboard() {
       </div>
 
       {/* pH Distribution Chart */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mt-8">
+      <div className="glass-card p-6 mt-8">
         <h3 className="text-lg font-bold mb-6 text-gray-800">{t('dash.ph')}</h3>
         <div className="h-80 w-full">
           <ResponsiveContainer width="100%" height="100%">

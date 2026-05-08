@@ -211,7 +211,7 @@ export default function Predict() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.1 }}
-        className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
+        className="glass-card overflow-hidden"
       >
         <div className="p-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b border-gray-100 pb-4">
@@ -417,7 +417,7 @@ export default function Predict() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="bg-white p-6 rounded-xl shadow-sm border border-emerald-200"
+                  className="glass-card p-6"
                 >
                   <p className="text-sm uppercase tracking-wider text-emerald-800 font-semibold mb-2">{t('predict.highlyRecommended')}</p>
                   <div className="flex items-end space-x-3 mb-2">
@@ -453,7 +453,7 @@ export default function Predict() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="bg-white p-6 rounded-xl shadow-sm border border-amber-200"
+                  className="glass-card p-6"
                 >
                   <p className="text-sm uppercase tracking-wider text-amber-800 font-semibold mb-4 flex items-center">
                     <Droplets className="h-4 w-4 mr-1" />
@@ -475,7 +475,7 @@ export default function Predict() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="md:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-emerald-200"
+                    className="md:col-span-2 glass-card p-6"
                   >
                     <p className="text-sm uppercase tracking-wider text-emerald-800 font-semibold mb-4 flex items-center">
                       {t('predict.regional')} {t('crop.' + result.topCrop) || result.topCrop}
@@ -497,7 +497,7 @@ export default function Predict() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="md:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-blue-200"
+                    className="md:col-span-2 glass-card p-6"
                   >
                     <p className="text-sm uppercase tracking-wider text-blue-800 font-semibold mb-4 flex items-center">
                       <Beaker className="h-4 w-4 mr-1" />
@@ -527,7 +527,7 @@ export default function Predict() {
             <h3 className="text-lg font-bold text-gray-800 mb-4 tracking-tight">{t('predict.history')}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {history.map((item) => (
-                <div key={item.id} className="bg-white p-4 rounded-xl shadow-sm border border-gray-200 transition-all hover:shadow-md">
+                <div key={item.id} className="glass-card p-4 border border-white/50 transition-all hover:shadow-md">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-xs font-semibold text-gray-500 uppercase tracking-widest">{item.date.split(',')[0]}</span>
                     <button onClick={() => { setFormData(item); setErrors({}); }} className="text-xs bg-emerald-100 text-emerald-700 hover:bg-emerald-200 px-2 py-1 rounded font-medium transition-colors">{t('hist.load')}</button>
@@ -555,7 +555,7 @@ export default function Predict() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden"
+              className="glass-card w-full max-w-lg overflow-hidden"
             >
               <div className="flex justify-between items-center bg-emerald-600 text-white p-4">
                 <h3 className="text-lg font-bold capitalize flex items-center">
