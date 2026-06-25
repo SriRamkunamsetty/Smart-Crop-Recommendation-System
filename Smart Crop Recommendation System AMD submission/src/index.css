@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "SF Pro Display", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: #f4f4f5;
+}
+
+.bg-farm-theme {
+  position: relative;
+}
+
+.bg-farm-theme::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('https://images.unsplash.com/photo-1592982537447-6f2a6a0c5c10?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(20px) brightness(0.9);
+  transform: scale(1.1); /* Prevent blur edges */
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-2xl border border-white/60 shadow-[0_8px_40px_rgb(0,0,0,0.08)] rounded-3xl;
+}
+
+.markdown-body h1 {
+  @apply text-3xl font-extrabold mb-6 text-gray-900 border-b pb-4;
+}
+
+.markdown-body h2 {
+  @apply text-2xl font-bold mt-8 mb-4 text-emerald-800;
+}
+
+.markdown-body h3 {
+  @apply text-xl font-bold mt-6 mb-3 text-gray-800;
+}
+
+.markdown-body h4 {
+  @apply text-lg font-semibold mt-4 mb-2 text-emerald-700;
+}
+
+.markdown-body p {
+  @apply text-gray-700 leading-relaxed mb-4;
+}
+
+.markdown-body ul {
+  @apply list-disc list-inside mb-4 text-gray-700 space-y-1;
+}
+
+.markdown-body hr {
+  @apply my-8 border-gray-200;
+}
